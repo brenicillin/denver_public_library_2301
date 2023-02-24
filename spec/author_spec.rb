@@ -24,7 +24,7 @@ RSpec.describe Author do
         })
       jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1846")
       villette = charlotte_bronte.write("Villette", "1853")
-      require 'pry'; binding.pry
+
       expect(jane_eyre.class).to eq(Book)
       expect(jane_eyre.title).to eq("Jane Eyre")
       expect(charlotte_bronte.books).to be_a(Array)
