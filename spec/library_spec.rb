@@ -50,12 +50,9 @@ RSpec.describe Library do
       expect(library.publication_time_frame_for(charlotte_bronte)).to be_a(Hash)
       expect(library.publication_time_frame_for(robert_frost)).to be_a(Hash)
       expect(library.publication_time_frame_for(charlotte_bronte)[:start]).to eq(1846)
-      expect(library.publication_time_frame_for(charlotte_bronte)[:last]).to eq(1853)
+      expect(library.publication_time_frame_for(charlotte_bronte)[:end]).to eq(1853)
       expect(library.publication_time_frame_for(robert_frost)[:start]).to eq(1920)
-      expect(library.publication_time_frame_for(robert_frost)[:last]).to eq(1923)
+      expect(library.publication_time_frame_for(robert_frost)[:end]).to eq(1923)
     end
   end
 end
-
-#Will need to implement array of books, array of authors, ability to add
-#authors, and time frames from different authors. 

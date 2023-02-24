@@ -25,7 +25,7 @@ class Library
     first_book = years.min 
     last_book = years.max
     hash[:start] = first_book
-    hash[:last] = last_book
+    hash[:end] = last_book
     hash
   end
 end
