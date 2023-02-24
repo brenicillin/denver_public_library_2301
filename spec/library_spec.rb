@@ -13,6 +13,22 @@ RSpec.describe Library do
       expect(library.authors).to eq([])
     end
   end
+
+  describe '#add_author' do
+    it 'can add authors' do
+      library = Library.new('Denver Public Library')
+      charlotte_bronte = Author.new({
+        first_name: "Charlotte", 
+        last_name: "Bronte"
+        })
+      jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1846")
+      villette = charlotte_bronte.write("Villette", "1853")
+      library.add_author(charlotte_bronte)
+
+      expect(library.authors.length).to eq(1)
+      expect(library.books.length).to eq(2)
+    end
+  end
 end
 
 #Will need to implement array of books, array of authors, ability to add
