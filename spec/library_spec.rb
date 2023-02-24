@@ -24,6 +24,7 @@ RSpec.describe Library do
       jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1846")
       villette = charlotte_bronte.write("Villette", "1853")
       library.add_author(charlotte_bronte)
+      require 'pry'; binding.pry
 
       expect(library.authors.length).to eq(1)
       expect(library.books.length).to eq(2)
