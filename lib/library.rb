@@ -15,4 +15,17 @@ class Library
     end
     @authors << author
   end
+
+  def publication_time_frame_for(author)
+    years = []
+    hash = Hash.new
+    author.books.each do |book|
+      years << book.publication_year
+    end
+    first_book = years.min 
+    last_book = years.max
+    hash[:start] = first_book
+    hash[:last] = last_book
+    hash
+  end
 end
