@@ -1,3 +1,4 @@
+require 'rspec'
 require './lib/book'
 
 RSpec.describe Book do
