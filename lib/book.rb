@@ -10,6 +10,6 @@ class Book
   end
 
   def publication_year
-    @publication_date.split[2].to_i
+    @publication_date.split[-1].to_i
   end
 end
