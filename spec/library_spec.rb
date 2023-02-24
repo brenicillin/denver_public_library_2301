@@ -47,9 +47,12 @@ RSpec.describe Library do
       nothing_gold = robert_frost.write("Nothing Gold can Stay", "October 1923")
       library.add_author(charlotte_bronte)
       library.add_author(robert_frost)
-
-      expect(publication_time_frame_for(charlotte_bronte)).to be_a(Hash)
-      expect(publication_time_frame_for(robert_frost)).to be_a(Hash)
+      expect(library.publication_time_frame_for(charlotte_bronte)).to be_a(Hash)
+      expect(library.publication_time_frame_for(robert_frost)).to be_a(Hash)
+      expect(library.publication_time_frame_for(charlotte_bronte)[:start]).to eq(1846)
+      expect(library.publication_time_frame_for(charlotte_bronte)[:last]).to eq(1853)
+      expect(library.publication_time_frame_for(robert_frost)[:start]).to eq(1920)
+      expect(library.publication_time_frame_for(robert_frost)[:last]).to eq(1923)
     end
   end
 end
